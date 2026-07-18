@@ -16,20 +16,20 @@ const localBindingConfig = {
   compatibility_flags: ["nodejs_compat"],
   d1_databases: d1
     ? [
-        {
-          binding: d1,
-          database_name: "site-creator-d1",
-          database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
-        },
-      ]
+      {
+        binding: d1,
+        database_name: "site-creator-d1",
+        database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
+      },
+    ]
     : [],
   r2_buckets: r2
     ? [
-        {
-          binding: r2,
-          bucket_name: "site-creator-r2",
-        },
-      ]
+      {
+        binding: r2,
+        bucket_name: "site-creator-r2",
+      },
+    ]
     : [],
 };
 
@@ -48,8 +48,9 @@ export default defineConfig(async () => {
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
-      vinext(),
-      sites(),
+      vinext({
+        prerender: true,
+      }), sites(),
       cloudflare({
         viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
         config: localBindingConfig,
