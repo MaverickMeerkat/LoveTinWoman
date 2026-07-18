@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     <main>
       <section className="hero page-shell" aria-labelledby="book-title">
@@ -19,7 +20,7 @@ export default function Home() {
         </div>
         <figure className="hero-image framed-image">
           <img
-            src="/assets/All together 6.png"
+            src={`${basePath}/assets/All together 6.png`}
             alt="חבורת גיבורי הספר באלמדה של סביליה"
             width="1536"
             height="1024"

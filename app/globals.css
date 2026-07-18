@@ -1,28 +1,11 @@
 @import "tailwindcss";
 
-@font-face {
-    font-family: "Frank Ruhl";
-    src: url('/fonts/FrankRuhl-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 400 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Frank Ruhl";
-    src: url('/fonts/FrankRuhl-Bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 700 900;
-    font-display: swap;
-}
-
 :root {
     --ink: #29241d;
     --wine: #7c2924;
     --gold: #bb7a2b;
     --paper: #fffaf0;
     --green: #173e35;
-    --font-frank: "Frank Ruhl", "FrankRuehl", "David Libre", David, serif;
 }
 
 * {
@@ -36,7 +19,12 @@ html {
 body {
     margin: 0;
     color: var(--ink);
-    background: #e9d1a4 url('/assets/Background.png') center/cover fixed no-repeat;
+    background-color: #e9d1a4;
+    background-image: var(--background-image);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: var(--font-frank);
     line-height: 1.7;
 }

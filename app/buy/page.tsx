@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = { title: "לרכישה" };
 export default function Buy() {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
     return <main className="inner-page page-shell buy-page">
         <section className="paper-panel">
             <header className="page-heading">
@@ -16,7 +17,7 @@ export default function Buy() {
 
             <div className="purchase-qr">
                 <img
-                    src="/assets/GrowQRLink.png"
+                    src={`${basePath}/assets/GrowQRLink.png`}
                     alt="לינק לתשלום"
                     width="250"
                     height="250"

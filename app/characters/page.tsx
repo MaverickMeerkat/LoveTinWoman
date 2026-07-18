@@ -34,6 +34,7 @@ const groups: Character[][] = [
 ];
 
 export default function Characters() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     <main className="inner-page page-shell characters-page">
       <header className="page-heading">
@@ -45,7 +46,7 @@ export default function Characters() {
           <section className={`character-row character-row--${group.length}`} key={groupIndex} aria-label={`קבוצת דמויות ${groupIndex + 1}`}>
             {group.map(({ name, description, image }) => (
               <article className="character-card" key={name}>
-                <img src={image} alt={`הדמות ${name}`} width="700" height="900" loading="lazy" />
+                <img src={`${basePath}${image}`} alt={`הדמות ${name}`} width="700" height="900" loading="lazy" />
                 <div className="card-copy">
                   <h2>{name}</h2>
                   <p style={{ whiteSpace: "pre-line" }}>{description}</p>
