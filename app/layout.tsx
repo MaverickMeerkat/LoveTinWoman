@@ -16,6 +16,11 @@ const frankRuhl = localFont({
 export const metadata: Metadata = {
   title: { default: "אהבתי לאשת הפח", template: "%s | אהבתי לאשת הפח" },
   description: "האתר הרשמי של הרומן אהבתי לאשת הפח — על אהבה, אמנות והתחלות חדשות בסביליה.",
+  icons: {
+    icon: "/favicon2.png",
+    shortcut: "/favicon2.png",
+    apple: "/favicon2.png",
+  },
 };
 
 const nav = [
