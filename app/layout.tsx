@@ -15,12 +15,29 @@ const frankRuhl = localFont({
 
 export const metadata: Metadata = {
   title: { default: "אהבתי לאשת הפח", template: "%s | אהבתי לאשת הפח" },
-  description: "האתר הרשמי של הרומן אהבתי לאשת הפח — על אהבה, אמנות והתחלות חדשות בסביליה.",
+
+  description: "הרומן אהבתי לאשת הפח — רומן פסיכולוגי פיוטי על אהבה וחברות",
   icons: {
     icon: "/favicon2.png",
     shortcut: "/favicon2.png",
     apple: "/favicon2.png",
   },
+
+  openGraph: {
+    title: "אהבתי לאשת הפח",
+    description: "הרומן אהבתי לאשת הפח — רומן פסיכולוגי פיוטי על אהבה וחברות",
+    url: "https://lovetinwoman.co.il",
+    siteName: "אהבתי לאשת הפח",
+    locale: "he_IL",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "אהבתי לאשת הפח",
+    description: "הרומן אהבתי לאשת הפח — רומן פסיכולוגי פיוטי על אהבה וחברות",
+  },
+
 };
 
 const nav = [
