@@ -14,6 +14,7 @@ const frankRuhl = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lovetinwoman.co.il"),
   title: { default: "אהבתי לאשת הפח", template: "%s | אהבתי לאשת הפח" },
 
   description: "הרומן אהבתי לאשת הפח — רומן פסיכולוגי פיוטי על אהבה וחברות",
@@ -30,12 +31,21 @@ export const metadata: Metadata = {
     siteName: "אהבתי לאשת הפח",
     locale: "he_IL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 600,
+        height: 573,
+        alt: "אהבתי לאשת הפח",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "אהבתי לאשת הפח",
     description: "הרומן אהבתי לאשת הפח — רומן פסיכולוגי פיוטי על אהבה וחברות",
+    images: ["/opengraph-image.jpg"],
   },
 
 };
