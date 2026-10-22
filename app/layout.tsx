@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
+import { MetaPixel } from "./MetaPixel";
 import "./globals.css";
 
 const frankRuhl = localFont({
@@ -60,6 +61,8 @@ const nav = [
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() ?? "";
+  const validPixelId = /^\d+$/.test(pixelId) ? pixelId : "";
   const bodyStyle = {
     "--background-image": `url("${basePath}/assets/Background.png")`,
   } as CSSProperties;
@@ -67,6 +70,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="he" dir="rtl">
       <body className={frankRuhl.variable} style={bodyStyle}>
+        {validPixelId && <MetaPixel pixelId={validPixelId} />}
         <header className="site-header">
           <div className="nav-wrap">
             <Link className="brand" href="/" aria-label="אהבתי לאשת הפח — דף הבית">

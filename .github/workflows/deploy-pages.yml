@@ -38,6 +38,8 @@ jobs:
 
       - name: Build website
         run: npm run build
+        env:
+          NEXT_PUBLIC_META_PIXEL_ID: ${{ vars.META_PIXEL_ID }}
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
