@@ -21,7 +21,7 @@ export default function Buy() {
                     alt="לינק לתשלום"
                     width="250"
                     height="250"
-                    fetchPriority="high"
+                    loading="lazy"
                 />
             </div>
             
