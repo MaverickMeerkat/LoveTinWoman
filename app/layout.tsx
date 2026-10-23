@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { MetaPixel } from "./MetaPixel";
+import { GoogleAnalytics } from "./GoogleAnalytics";
 import "./globals.css";
 
 const frankRuhl = localFont({
@@ -63,6 +64,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() ?? "";
   const validPixelId = /^\d+$/.test(pixelId) ? pixelId : "";
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-QNV0B1DDNK";
+  const validGaMeasurementId = /^G-[A-Z0-9]+$/.test(gaMeasurementId) ? gaMeasurementId : "";
   const bodyStyle = {
     "--background-image": `url("${basePath}/assets/Background.png")`,
   } as CSSProperties;
@@ -71,6 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="he" dir="rtl">
       <body className={frankRuhl.variable} style={bodyStyle}>
         {validPixelId && <MetaPixel pixelId={validPixelId} />}
+        {validGaMeasurementId && <GoogleAnalytics measurementId={validGaMeasurementId} />}
         <header className="site-header">
           <div className="nav-wrap">
             <Link className="brand" href="/" aria-label="אהבתי לאשת הפח — דף הבית">

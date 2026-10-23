@@ -85,6 +85,25 @@ or enforce explicit server-side membership or allowlist checks.
 Use SIWC for account pages, user-specific dashboards, saved records, and write
 actions tied to the current ChatGPT user. Leave public content anonymous.
 
+## Google Analytics (GA4)
+
+The root layout loads the Google tag on every page using `G-QNV0B1DDNK`.
+The optional environment variable overrides this default; invalid IDs disable
+Analytics.
+
+- Local builds: set `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-YOURID` in `.env.local`.
+- GitHub Pages uses the default ID. To override it, add the repository Actions
+  variable `GA_MEASUREMENT_ID`, then run the deployment workflow.
+- In the GA4 web stream, enable Enhanced measurement → Page views → Page
+  changes based on browser history events to track Next.js navigation.
+  Page views use Google's automatic measurement; do not also add manual
+  page-view events.
+- After deployment, visit the site and navigate between pages, then confirm
+  activity in GA4 Realtime or DebugView.
+
+The ID is public configuration embedded during the static build. Changing it
+requires rebuilding and deploying the site.
+
 ## Useful Commands
 
 - `npm run dev`: start local development
